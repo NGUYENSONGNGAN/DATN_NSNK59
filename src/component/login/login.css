@@ -1,0 +1,11 @@
+.container_login
+{
+    margin: 0px auto;
+    
+}
+.container_login .Login
+{
+    width:30%;
+    display: flex;
+    flex-direction:column;
+}
