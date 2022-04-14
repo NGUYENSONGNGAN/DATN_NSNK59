@@ -15,7 +15,7 @@ const Login = () => {
             <h1>Login</h1>
             <input type="text" className="UserName" onChange={(e) => setTaiKhoan(e.target.value)}/>
             <input type='password' className="password" onChange={(e) => setMatKhau(e.target.value)}/>
-            <Button  onClick={() => console.log(taikhoan,matkhau)} type="primary">Primary Button</Button>
+            <Button  onClick={()=> console.log(taikhoan,matkhau)} type="primary">Primary Button</Button>
         </div>
     </div>
   )
