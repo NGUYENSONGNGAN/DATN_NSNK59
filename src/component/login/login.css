@@ -1,11 +1,39 @@
 .container_login
 {
     margin: 0px auto;
-    
+    background-image: url(../img/login_background.jpg);    
+    width: 100%;
+    height:100vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.container_login img
+{
+    width: 100%;
+    object-fit: cover;
 }
 .container_login .Login
 {
     width:30%;
     display: flex;
+    min-height: 500px;
     flex-direction:column;
+}
+
+.group_login
+{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(.8px);
+}
+.Form_login
+{
+    background: #fff;
+    border-radius: 5px;
 }

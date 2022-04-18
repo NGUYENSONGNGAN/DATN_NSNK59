@@ -1,12 +1,14 @@
-import Login from '../src/component/login/Login'
-import Header from '../src/component/login/Header'
+import SignIn from '../src/component/login/SignIn'
+import Header from '../src/component/header/Header'
+import Footer from '../src/component/footer/Footer'
 
 function App() {
   return (
-    <div>
-<Header/>
-<Login/>
-    </div>
+    <> 
+    <Footer/>
+    </>
+
+
   );
 }
 
