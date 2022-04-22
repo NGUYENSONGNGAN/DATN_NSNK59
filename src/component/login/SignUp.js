@@ -39,7 +39,7 @@ const SignUp = () => {
             <span className="txt1">Login?</span>
             &nbsp;
             <Link to="/signin" className="txt2 hov1">
-            Click
+            Clickddd
             </Link>
           </div>
         </div>
