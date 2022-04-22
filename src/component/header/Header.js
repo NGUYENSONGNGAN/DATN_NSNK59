@@ -44,8 +44,8 @@ const Header = () => {
     const menu = (
         <Menu>
              {theloai.map(({ name, id }) => (
-                     <Menu.Item>
-                     <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com" key={id}>
+                     <Menu.Item key={id}>
+                     <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com" >
                      {name}
                      </a>
                    </Menu.Item>
@@ -72,7 +72,7 @@ const Header = () => {
                 <div className="header_action">
                     <div className="action_search">
                         <div className="form_group search-input-wrap">
-                            <input type="text" class="form-control" placeholder="Tìm sản phẩm..." />
+                            <input type="text" className="form-control" placeholder="Tìm sản phẩm..." />
                             <Button className="btn_search" type="primary" shape="circle" icon={<SearchOutlined />} />
                         </div>
                         <div className="iconRightHeaderContainer">
