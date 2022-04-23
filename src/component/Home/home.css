@@ -1,0 +1,8 @@
+.SlideHomeContainer {
+  max-width: 100%;
+  height: 600px;
+}
+.imgItemSlideHome {
+  width: 100%;
+  object-fit: cover;
+}
