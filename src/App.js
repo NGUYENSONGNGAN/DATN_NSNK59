@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./routes/PrivateRoute";
 import Home from "./component/Home/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
+import SlideHome from "./component/SlideHome/SlideHome";
 
 function Admin() {
   return <h1>Đây là trang admin sau khi đã đăng nhập</h1>;
@@ -19,16 +20,16 @@ function Admin() {
 function App() {
   return (
     <div>
-      <div style={{ marginBottom: "200px" }}>
+      <div>
         <Header />
       </div>
 
       {/* render component theo route */}
       <div>
+        <SlideHome />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
-
           <Route
             path="admin"
             element={
@@ -39,7 +40,6 @@ function App() {
           />
         </Routes>
       </div>
-
       <Footer />
     </div>
   );

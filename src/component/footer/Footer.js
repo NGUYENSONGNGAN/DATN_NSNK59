@@ -15,7 +15,7 @@ import {
 const Footer = () => {
   return (
     <div
-      className="font-small mdb-color lighten-3 pt-4 "
+      className="font-small mdb-color lighten-3 pt-4 Footer"
     > 
       <div className="container text-center text-md-left">  
         <div className="row"> 
@@ -44,12 +44,12 @@ const Footer = () => {
               </li>
               <li>
                 <p> 
-                  <FaRegEnvelope /> trandinhthao2000@gmail.com
+                  <FaRegEnvelope /> nguyensongnganuuuu@gmail.com
                 </p>
               </li>
               <li>
                 <p>
-                <FaPhone /> 0837 153 472
+                <FaPhone /> 0988 390 847
                 </p>
               </li>
             </ul>
@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="row">
               <div className="col">
                 <a
-                  href="https://www.facebook.com/profile.php?id=100058422053540"
+                  href="https://www.facebook.com/songngannguye/"
                   type="button"
                   className="btn-floating"
                 >

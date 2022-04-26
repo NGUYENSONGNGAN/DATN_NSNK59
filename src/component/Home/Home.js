@@ -7,6 +7,7 @@ import ahc from "../../Data/img/anyconv (11).webp";
 // import { Carousel } from "react-responsive-carousel";
 import { Carousel } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import ListProduct from "../listproduct/ListProduct";
 
 const { Meta } = Card;
 const Home = memo(() => {
@@ -195,57 +196,14 @@ const Home = memo(() => {
   ];
   return (
     <div>
-      {/* <Carousel width="100%" height="300px">
-        <div>
-          <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 10) + 1}/200/300`} />
-          <p className="legend">Legend 1</p>
-        </div>
-        <div>
-          <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 10) + 1}/200/300`} />
-          <p className="legend">Legend 2</p>
-        </div>
-        <div>
-          <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 10) + 1}/200/300`} />
-          <p className="legend">Legend 3</p>
-        </div>
-      </Carousel> */}
-      {/*  {Data &&
-        Data.map((item, id) => (
-          <div key={id}>
-            <Card
-              hoverable
-              style={{ width: 240 }}
-              cover={
-                <img
-                  alt="example"
-                  src={`https://picsum.photos/id/${Math.floor(Math.random() * 10) + 1}/200/300`}
-                />
-              }
-            >
-              <Meta title={item.tenSanPham} description="www.instagram.com" />
-            </Card>
-          </div>
-        ))} */}
-      {/*  <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={`https://picsum.photos/id/${Math.floor(Math.random() * 10) + 1}/200/300`}
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel> */}
-      <div className="SlideHomeContainer">
-      <Carousel>
+      <div className="SlideHomeContainer container">
+      <Carousel style={{height:"600px"}}>
         <Carousel.Item>
           <img
             className="d-block w-100 imgItemSlideHome"
             src={`https://picsum.photos/id/${Math.floor(Math.random() * 10) + 1}/200/300`}
             alt="First slide"
+            style={{objectFit:'cover',width:"100%"}}
           />
         </Carousel.Item>
         <Carousel.Item>
@@ -264,6 +222,7 @@ const Home = memo(() => {
         </Carousel.Item>
       </Carousel>
       </div>
+      <ListProduct/>
     </div>
   );
 });
