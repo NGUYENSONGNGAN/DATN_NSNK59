@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import './styles.scss';
 import banner01 from '../../assets/images/banner-01.jpeg';
 import banner02 from '../../assets/images/banner-02.jpeg';
-import '../SlideHome/styles.css';
+import "../SlideHome/style.css"
 
 function SlideHome() {
   const settings = {

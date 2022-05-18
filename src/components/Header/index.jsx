@@ -2,11 +2,15 @@ import React from 'react';
 import './styles.scss';
 import { SearchOutlined } from '@ant-design/icons';
 import { BiMap, BiUser, BiShoppingBag } from 'react-icons/bi';
-import { Button } from 'antd';
+import { Badge, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const { cartItems } = useSelector((state) => state.cart);
+  const { isAuthenticated } = useSelector((state) => state.user);
+
   const mainNav = [
     {
       display: 'Trang chủ',
@@ -27,7 +31,7 @@ const Header = () => {
   ];
   return (
     <div className="header">
-      <div className="header_container ">
+      <div className="header_container container">
         <Link to="/" className="Header_logo">
           <img src={logo} width="150" height="50" alt="logo" />
         </Link>
@@ -46,18 +50,23 @@ const Header = () => {
               <div className="iconRightHeader icon_mapHeader">
                 <BiMap className="iconRightHeaderitem" />
               </div>
-              <Link to="/login" className="iconRightHeader icon_userHeader">
+              <Link
+                to={`${isAuthenticated ? 'account' : 'login'}`}
+                className="iconRightHeader icon_userHeader"
+              >
                 <BiUser className="iconRightHeaderitem" />
               </Link>
-              <div className="iconRightHeader icon_shopingbagHeader">
-                <BiShoppingBag className="iconRightHeaderitem" />
-              </div>
+              <Link to="/cart" className="iconRightHeader icon_shopingbagHeader">
+                <Badge count={cartItems.length}>
+                  <BiShoppingBag className="iconRightHeaderitem" />
+                </Badge>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="d-flex list-menu">
+      <div className="d-flex list-menu container">
         {mainNav.map((item, index) => (
           <Link to={item.path} key={index} className="menu-item">
             {item.display}

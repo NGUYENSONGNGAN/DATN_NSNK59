@@ -1,37 +1,41 @@
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
-import React from 'react';
+import { message } from 'antd';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import { dataProducts } from './data';
+import { allProducts } from '../../assets/data/products';
+import { getProduct } from '../../redux/actions/productAction';
+import ItemProduct from '../ItemProduct';
 import './styles.scss';
 
 const ListProductsHome = () => {
+  const dispatch = useDispatch();
+  const { loading, error, products } = useSelector((state) => state.products);
+
+  useEffect(() => {
+    if (error) {
+      return message.error(error);
+    }
+
+    dispatch(getProduct());
+  }, [dispatch, error]);
+
   var settings = {
     className: 'center',
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 3,
     autoplay: true,
     autoplaySpeed: 1000,
   };
   return (
-    <div className="list-products">
+    <div className="list-products container">
       <h2 className="my-3">XU HƯỚNG</h2>
       <Slider {...settings}>
-        {dataProducts.map((val) => (
-          <Link to="/" className="item-slider" key={val.id}>
-            <div className="item-slider-img">
-              <img src={val.img} alt="Mom Daisy Heart Charm" />
-            </div>
-            <div className="item-slider-content">
-              <span className="new-product-loop-label"></span>
-              <span className="item-slider-content-tit">{val.name}</span>
-              <span className="item-slider-content-price">{val.price}</span>
-            </div>
-          </Link>
-        ))}
+        {products && products.map((item) => <ItemProduct item={item} key={item.name} />)}
       </Slider>
     </div>
   );
